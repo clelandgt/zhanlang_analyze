@@ -11,6 +11,13 @@ pip安装jieba, wordcloud
     $ pip install wordcloud
 
 ## 运行
+手动登录豆瓣填充上cookie信息（dbcl2对应的值）
+    
+    ```python
+    # 手动粘取登录后的cookie信息，dbcl2对应的值。
+    cookies = {"dbcl2": ""} 
+    ```
+
 爬取豆瓣电影上《战狼2》的热门评论。需要运行一段时间，为避免意外中断，将程序挂到后台运行。
     
     $ nohup python zhanlang_spider.py &
