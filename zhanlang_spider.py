@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 """ 抓取豆瓣电影的战狼影评
-手动装载的登录后的关键信息
+手动装载的登录后的关键cookies
 """
 import os
 import sys
@@ -71,7 +71,7 @@ HEADER = {
 def main():
 	session =requests.session()
 	cookies = {"dbcl2": "120962264:pwtS4X8yrCg"}
-	for index in xrange(1000, 1050, 20):
+	for index in xrange(7000, 10000, 20):
 		# 爬取战狼评论
 		logger.info(u'爬取战狼第{}条评论'.format(index))
 		try:
@@ -83,7 +83,6 @@ def main():
 				logger.info('success.')
 		except Exception as e:
 			logger.exception(e)
-			break
 		
 		# 解析评论
 		selector = etree.HTML(response.content)
